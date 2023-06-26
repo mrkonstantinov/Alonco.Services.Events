@@ -1,17 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
+using System.Diagnostics;
 
-// Add services to the container.
+namespace Catalog.API;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Activity.DefaultIdFormat = ActivityIdFormat.W3C;
+        CreateHostBuilder(args).Build().Run();
+    }
 
-builder.Services.AddControllers();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
+    private static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStartup<Startup>();
+        });
+}
