@@ -9,7 +9,6 @@ public class Event : BaseEntity
     public string Name { get; set; }
     public string Description { get; set; }
     public string ImageFile { get; set; }
-    public EventCategory Types { get; set; }
     [BsonRepresentation(BsonType.Decimal128)]
     public decimal Price { get; set; }
     public IEnumerable<Tag> Tags { get; set; }
