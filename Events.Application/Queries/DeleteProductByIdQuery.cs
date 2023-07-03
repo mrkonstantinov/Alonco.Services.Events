@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace Catalog.Application.Queries;
+namespace Events.Application.Queries;
 
 public class DeleteEventByIdQuery : IRequest<bool>
 {

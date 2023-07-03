@@ -1,13 +1,15 @@
 using AutoMapper;
-using Catalog.Application.Commands;
-using Catalog.Application.Responses;
-using Catalog.Core.Entities;
+using Events.Application.Commands;
+using Events.Application.Responses;
+using Events.Core.Entities;
 
-namespace Catalog.Application.Mappers;
+namespace Events.Application.Mappers;
 
 public class EventMappingProfile : Profile
 {
     public EventMappingProfile()
     {
+        CreateMap<Tag, TagResponse>().ReverseMap();
+
     }
 }

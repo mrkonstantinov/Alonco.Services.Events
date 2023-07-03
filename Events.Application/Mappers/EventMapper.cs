@@ -1,6 +1,6 @@
 using AutoMapper;
 
-namespace Catalog.Application.Mappers;
+namespace Events.Application.Mappers;
 
 public static class EventMapper
 {

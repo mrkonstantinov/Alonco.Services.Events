@@ -1,9 +1,9 @@
-using Catalog.Core.Entities;
+using Events.Core.Entities;
 using MediatR;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Catalog.Application.Commands;
+namespace Events.Application.Commands;
 
 public class UpdateEventCommand : IRequest<bool>
 {

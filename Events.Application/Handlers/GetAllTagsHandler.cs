@@ -1,11 +1,11 @@
-using Catalog.Application.Mappers;
-using Catalog.Application.Queries;
-using Catalog.Application.Responses;
-using Catalog.Core.Entities;
-using Catalog.Core.Repositories;
+using Events.Application.Mappers;
+using Events.Application.Queries;
+using Events.Application.Responses;
+using Events.Core.Entities;
+using Events.Core.Repositories;
 using MediatR;
 
-namespace Catalog.Application.Handlers;
+namespace Events.Application.Handlers;
 
 public class GetAllTagsHandler : IRequestHandler<GetAllTagsQuery, IList<TagResponse>>
 {

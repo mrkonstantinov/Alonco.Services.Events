@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  eventsdb:
+    image: mongo
+
+  events.api:
+    image: ${DOCKER_REGISTRY-}eventsapi
+    build:
+      context: .
+      dockerfile: Events.API/Dockerfile
+
+volumes:
+  mongo_data:

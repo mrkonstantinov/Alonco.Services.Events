@@ -1,16 +1,16 @@
-using Catalog.Core.Entities;
-using Catalog.Core.Repositories;
-using Catalog.Infrastructure.Data;
+using Events.Core.Entities;
+using Events.Core.Repositories;
+using Events.Infrastructure.Data;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace Catalog.Infrastructure.Repositories;
+namespace Events.Infrastructure.Repositories;
 
-public class ProductRepository : IEventRepository, ITagsRepository
+public class EventRepository : IEventRepository, ITagsRepository
 {
     private readonly IEventContext _context;
 
-    public ProductRepository(IEventContext context)
+    public EventRepository(IEventContext context)
     {
         _context = context;
     }    
@@ -46,8 +46,11 @@ public class ProductRepository : IEventRepository, ITagsRepository
         return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
     }
 
-    public Task<IEnumerable<Core.Entities.Tag>> GetAllTags()
+    public async Task<IEnumerable<Core.Entities.Tag>> GetAllTags()
     {
-        throw new NotImplementedException();
+        return await _context
+            .Tags
+            .Find(b => true)
+            .ToListAsync();
     }
 }

@@ -1,8 +1,8 @@
-using Catalog.Core.Entities;
+using Events.Core.Entities;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
-namespace Catalog.Infrastructure.Data;
+namespace Events.Infrastructure.Data;
 
 public class EventContext : IEventContext
 {

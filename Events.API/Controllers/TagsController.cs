@@ -1,12 +1,12 @@
 using System.Diagnostics.Tracing;
 using System.Net;
-using Catalog.Application.Commands;
-using Catalog.Application.Queries;
-using Catalog.Application.Responses;
+using Events.Application.Commands;
+using Events.Application.Queries;
+using Events.Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Catalog.API.Controllers;
+namespace Events.API.Controllers;
 
 public class TagsController : ApiController
 {
@@ -20,7 +20,7 @@ public class TagsController : ApiController
     }
     
     [HttpGet]
-    [Route("GetAllTagss")]
+    [Route("GetAllTags")]
     [ProducesResponseType(typeof(IList<TagResponse>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IList<TagResponse>>> GetAllTags()
     {
@@ -47,7 +47,7 @@ public class TagsController : ApiController
         return Ok(result);
     }
     [HttpDelete]
-    [Route("{id}",Name="DeleteProduct")]
+    [Route("{id}",Name="DeleteEvent")]
     [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> DeleteEvent(string id)
     {

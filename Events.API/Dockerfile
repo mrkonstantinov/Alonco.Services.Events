@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Alonco.Services.Events/Events.API/Events.API.csproj", "Services/Events/Events.API/"]
-COPY ["Alonco.Services.Events/Events.Application/Catalog.Application.csproj", "Services/Events/Events.Application/"]
-COPY ["Alonco.Services.Events/Events.Core/Catalog.Core.csproj", "Services/Events/Events.Core/"]
-COPY ["Alonco.Services.Events/Events.Infrastructure/Catalog.Infrastructure.csproj", "Services/Events/Events.Infrastructure/"]
+COPY ["Events.API/Events.API.csproj", "Services/Events/Events.API/"]
+COPY ["Events.Application/Events.Application.csproj", "Services/Events/Events.Application/"]
+COPY ["Events.Core/Events.Core.csproj", "Services/Events/Events.Core/"]
+COPY ["Events.Infrastructure/Events.Infrastructure.csproj", "Services/Events/Events.Infrastructure/"]
 
 RUN dotnet restore "Services/Events/Events.API/Events.API.csproj"
 COPY . .

@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  eventsdb:
+    container_name: eventsdb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  events.api:
+    container_name: events.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+#      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - "DatabaseSettings__ConnectionString=mongodb://eventsdb:27017"
+      - "DatabaseSettings__DatabaseName=EventsDb"
+      - "DatabaseSettings__CollectionName=Events"
+      - "DatabaseSettings__TagsCollection=Tags" 
+    depends_on:
+      - eventsdb
+    ports:
+      - "9000:80"

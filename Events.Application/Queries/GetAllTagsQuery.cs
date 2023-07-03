@@ -1,7 +1,7 @@
-using Catalog.Application.Responses;
+using Events.Application.Responses;
 using MediatR;
 
-namespace Catalog.Application.Queries;
+namespace Events.Application.Queries;
 
 public class GetAllTagsQuery : IRequest<IList<TagResponse>>
 {

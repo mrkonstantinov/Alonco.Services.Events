@@ -1,7 +1,7 @@
-using Catalog.Core.Entities;
+using Events.Core.Entities;
 using MongoDB.Driver;
 
-namespace Catalog.Infrastructure.Data;
+namespace Events.Infrastructure.Data;
 
 public interface IEventContext
 {

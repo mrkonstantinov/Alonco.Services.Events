@@ -1,9 +1,9 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Catalog.Core.Entities;
+namespace Events.Core.Entities;
 
-public class Tag
+public class Tag : BaseEntity
 {
     [BsonElement("Name")]
     public string Name { get; set; }

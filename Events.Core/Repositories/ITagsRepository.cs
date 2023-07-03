@@ -1,6 +1,6 @@
-using Catalog.Core.Entities;
+using Events.Core.Entities;
 
-namespace Catalog.Core.Repositories;
+namespace Events.Core.Repositories;
 
 public interface ITagsRepository
 {

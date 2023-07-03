@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Catalog.API;
+namespace Events.API;
 public class Program
 {
     public static void Main(string[] args)
